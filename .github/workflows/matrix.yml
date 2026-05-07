@@ -22,4 +22,4 @@ jobs:
         run: npm run build
   summarize:
     needs: build
-    uses: C:\Users\eelbadawy\test-repo\github-actions-course-resources\Code\06 Execution Flow\01 Starting Project\.github\workflows\reusable.yal
+    uses: .\.github\workflows\reusable.yml
