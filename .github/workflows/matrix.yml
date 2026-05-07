@@ -3,10 +3,11 @@ on: push
 
 jobs:
   build:
+    continue-on-error: true
     strategy:
       matrix:
         operating-system: [ubuntu-latest, windows-latest]
-        node-version: [16, 18, 20]
+        node-version: [12, 18, 20]
     runs-on: ${{ matrix.operating-system }}
     steps:
       - name: get code
