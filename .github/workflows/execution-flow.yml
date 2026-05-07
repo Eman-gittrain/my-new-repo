@@ -32,7 +32,7 @@ jobs:
         with:
           path: node-modules
           key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
-      - name: Install dependencies
+      - name: Install depedencies
         if: steps.cache.outputs.cache_hit != 'true'
         run: npm ci
       - name: Test code
