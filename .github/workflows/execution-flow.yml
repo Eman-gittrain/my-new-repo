@@ -34,7 +34,7 @@ jobs:
         run: npm ci
       - name: Test code
         id: ran-step
-        run: np run test
+        run: npm run test
       - name: Upload test report
         if: failure() && steps.ran-step.outcome == 'failure'
         uses: actions/upload-artifact@v4
@@ -48,3 +48,11 @@ jobs:
       - name: final step
         run:
           echo last step
+
+  report:
+    if: failure()
+    runs-on: ubuntu-latest
+    steps:
+      - name: print info
+        run:
+          echo something went wrong
