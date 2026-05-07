@@ -41,15 +41,8 @@ jobs:
         with:
           name: test-report
           path: test.json
-  finalize:
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
-      - name: final step
-        run:
-          echo last step
-
   report:
+    needs: [lint, test]
     if: failure()
     runs-on: ubuntu-latest
     steps:
