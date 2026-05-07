@@ -6,11 +6,8 @@ jobs:
     continue-on-error: true
     strategy:
       matrix:
-        node-version: [12, 14, 16]
+        node-version: [14, 16]
         operating-system: [ubuntu-latest, windows-latest]
-        include:
-          - node-version: 18
-            operating-system: ubuntu-latest
     runs-on: ${{ matrix.operating-system }}
     steps:
       - name: get code
@@ -23,3 +20,6 @@ jobs:
         run: npm ci
       - name: build project
         run: npm run build
+  summarize:
+    needs: build
+    uses: .\.github\workflow\reusable.yml

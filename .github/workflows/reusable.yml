@@ -1,0 +1,9 @@
+name: reusable worflow
+on: workflow_call
+
+jobs:
+  print-info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: display called job message
+        run: echo info from re-used job
