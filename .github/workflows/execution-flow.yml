@@ -30,7 +30,7 @@ jobs:
         with:
           path: ~/.npm
           key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
-      - name: Install dependencies
+      - name: Instal dependencies
         run: npm ci
       - name: Test code
         id: ran-step
