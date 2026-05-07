@@ -49,6 +49,6 @@ jobs:
     if: failure()
     runs-on: ubuntu-latest
     steps:
-      - name: print info
+      - name: prit info
         run:
           echo something went wrong
