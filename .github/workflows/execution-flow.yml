@@ -38,7 +38,7 @@ jobs:
       - name: Test code
         id: ran-step
         run: npm run test
-      - name: Upload test report
+      - name: Upload test reprt
         if: failure() && steps.ran-step.outcome == 'failure'
         uses: actions/upload-artifact@v4
         with:
