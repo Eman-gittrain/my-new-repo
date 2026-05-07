@@ -41,7 +41,7 @@ jobs:
         if: failure() && steps.ran-step.outcome == 'failure'
         uses: actions/upload-artifact@v4
         with:
-          name: test-report
+          name: test-rport
           path: test.json
   report:
     needs: [lint, test]
