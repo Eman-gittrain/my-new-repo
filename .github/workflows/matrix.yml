@@ -5,16 +5,16 @@ jobs:
   build:
     strategy:
       matrix:
-        operating system: [ubuntu-latest, windows-latest]
-        node-version: [12, 14, 16]
+        operating-system: [ubuntu-latest, windows-latest]
+        node-version: [16, 18, 20]
     runs-on: ${{ matrix.operating-system }}
     steps:
       - name: get code
-        uses: actions/Checkout@v4
+        uses: actions/checkout@v4
       - name: install nodeJS
         uses: actions/setup-node@v4
         with:
-          ${{ matrix.node-version }}
+          node-versiopn: ${{ matrix.node-version }}
       - name: install dependencies
         run: npm ci
       - name: build project
